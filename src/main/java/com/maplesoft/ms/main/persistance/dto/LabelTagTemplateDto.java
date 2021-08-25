@@ -14,5 +14,5 @@ public class LabelTagTemplateDto {
 
     private Long id;
     private String labelUrl;
-    Set<LabelMessage> messages;
+    Set<LabelMessage> labelMessages;
 }

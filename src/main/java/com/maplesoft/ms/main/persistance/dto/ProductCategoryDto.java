@@ -16,5 +16,5 @@ public class ProductCategoryDto {
     private Long id;
     private String categoryName;
     private Date createdOn;
-    Set<LabelMessage> categories;
+    Set<LabelMessage> labelMessages;
 }

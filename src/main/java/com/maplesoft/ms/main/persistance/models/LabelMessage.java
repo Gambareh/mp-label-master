@@ -2,10 +2,7 @@ package com.maplesoft.ms.main.persistance.models;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -13,14 +10,17 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "sc_label_messages)")
+@Table(name = "sm_label_message")
 public class LabelMessage {
 
     @Id
-    @Column(name = "label_message_id")
     private Long id;
-    @Column(name = "label_message")
+    @Column(name = "message")
     private String messageLine;
+    @ManyToOne
+    private Etiquette etiquette;
+
+
 
 
 }

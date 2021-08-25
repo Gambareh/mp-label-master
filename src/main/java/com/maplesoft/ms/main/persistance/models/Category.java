@@ -13,8 +13,8 @@ import java.util.Set;
 @Setter
 @ToString
 @Entity
-@Table(name = "sm_product_category")
-public class ProductCategory {
+@Table(name = "sm_category")
+public class Category {
     @Id
     @Column(name = "product_category_id")
     private Long id;
@@ -23,7 +23,9 @@ public class ProductCategory {
     @Column(name = "creation_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdOn;
-    @ManyToMany(mappedBy = "productCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
-    Set<LabelMessage> categories = new HashSet<>();
+    @ManyToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "sm_product_categories",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")})
+    Set<Product> product = new HashSet<>();
 }

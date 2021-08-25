@@ -4,8 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,8 +25,7 @@ public class Product {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdOn;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "label_id", referencedColumnName = "id")
-    private LabelTagTemplate tagTemplate;
+    private Etiquette etiquette;
 
 
 

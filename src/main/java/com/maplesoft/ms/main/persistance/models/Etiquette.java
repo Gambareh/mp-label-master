@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -14,15 +13,18 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @Entity
-@Table(name = "sc_label_tag")
-public class LabelTagTemplate {
+@Table(name = "sm_etiquette")
+public class Etiquette {
+
     @Id
-    @Column(name = "label_id")
     private Long id;
 
     @Column(name = "label_path")
     private String labelUrl;
-    @OneToMany(mappedBy = "labelTagTemplate", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    Set<LabelMessage> messages = new HashSet<>();
+    @OneToMany(fetch = FetchType.LAZY,
+               cascade = CascadeType.ALL)
+    @JoinColumn(name = "etiquette_id")
+    Set<LabelMessage> labelMessage;
+
 
 }

@@ -1,6 +1,6 @@
 package com.maplesoft.ms.main.persistance.dto;
 
-import com.maplesoft.ms.main.persistance.models.LabelTagTemplate;
+import com.maplesoft.ms.main.persistance.models.Etiquette;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +16,5 @@ public class ProductDto {
     private String label;
     private String shortLabel;
     private Date createdOn;
-    private LabelTagTemplate tagTemplate;
+    private Etiquette etiquette;
 }
