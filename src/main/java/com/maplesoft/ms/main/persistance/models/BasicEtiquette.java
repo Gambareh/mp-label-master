@@ -6,25 +6,33 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Getter
-@Setter
+
 @ToString
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "sm_etiquette")
-public class Etiquette {
+public abstract class BasicEtiquette {
 
     @Id
     private Long id;
-
     @Column(name = "label_path")
     private String labelUrl;
-    @OneToMany(fetch = FetchType.LAZY,
-               cascade = CascadeType.ALL)
-    @JoinColumn(name = "etiquette_id")
-    Set<LabelMessage> labelMessage;
-
+    @Column
+    private String title;
+    @Column
+    private String header;
+    @Column
+    private String message1;
+    @Column
+    private String message2;
+    @Column
+    private String message3;
+    @Column
+    private String message4;
+    @Column
+    private String message5;
 
 }

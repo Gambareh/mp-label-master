@@ -25,7 +25,7 @@ public class Product {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdOn;
     @OneToOne(cascade = CascadeType.ALL)
-    private Etiquette etiquette;
+    private BasicEtiquette etiquette;
 
 
 

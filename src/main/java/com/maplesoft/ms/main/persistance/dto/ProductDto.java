@@ -1,11 +1,13 @@
 package com.maplesoft.ms.main.persistance.dto;
 
-import com.maplesoft.ms.main.persistance.models.Etiquette;
+import java.util.Date;
+
+import com.maplesoft.ms.main.persistance.models.BasicEtiquette;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,5 +18,5 @@ public class ProductDto {
     private String label;
     private String shortLabel;
     private Date createdOn;
-    private Etiquette etiquette;
+   
 }

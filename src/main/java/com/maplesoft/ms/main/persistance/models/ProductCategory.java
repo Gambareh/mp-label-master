@@ -14,7 +14,7 @@ import java.util.Set;
 @ToString
 @Entity
 @Table(name = "sm_category")
-public class Category {
+public class ProductCategory {
     @Id
     @Column(name = "product_category_id")
     private Long id;
